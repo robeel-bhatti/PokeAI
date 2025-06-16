@@ -57,3 +57,23 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## ✅ Code Quality & Formatting Workflow
+
+This project uses several tooling to ensure the project follows consisting code styling and formatting.
+
+`.husky`: Husky manages the actions that occur when a specific git hook is run.
+For this project, husky will be used to invoke actions when the `pre-commit` and `commit-msg` git hooks are run.
+
+`lint-staged`: Lint-staged is a tool which will be invoked by husky when the `pre-commit` git hook is run. Lint-staged
+will be responsible for running `eslint` and `prettier` for code linting and formatting on staged files.
+
+> **Note**: Running code quality tasks with formatters and linters make more sense when run before committing your code.
+> By doing so you can ensure no errors go into the repository and enforce code style.
+>
+> But running a task on a whole project can be slow, and opinionated tasks such as linting can sometimes produce irrelevant results.
+> Ultimately you only want to check files that will be committed.
+
+`prettier`: Prettier will be used as the code formatting tool. This ensures a codebase follows a consistent formatting standard.
+
+`eslint`: EsLint will be used as the code linting tool. This ensures a codebase follows a consistent coding standard.
